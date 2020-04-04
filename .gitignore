@@ -109,3 +109,8 @@ gradle-app.setting
 
 # IntelliJ
 out/
+/super-heroes/ui-super-heroes/node_modules/
+
+
+dist/
+node_modules/

@@ -25,16 +25,16 @@
     <name>Quarkus Workshop :: Super-Heroes :: Super Heroes UI</name>
 
     <properties>
-        <quarkus.version>1.2.0.Final</quarkus.version>
+        <quarkus.version>1.3.1.Final</quarkus.version>
         <surefire-plugin.version>2.22.0</surefire-plugin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <node.version>v10.16.3</node.version>
-        <npm.version>6.11.3</npm.version>
-        <frontend-maven-plugin.version>1.8.0</frontend-maven-plugin.version>
+        <node.version>v13.11.0</node.version>
+        <npm.version>6.13</npm.version>
+        <frontend-maven-plugin.version>1.9.1</frontend-maven-plugin.version>
     </properties>
 
     <dependencies>
