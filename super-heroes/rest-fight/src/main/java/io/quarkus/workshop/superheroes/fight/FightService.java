@@ -5,6 +5,9 @@ import io.quarkus.workshop.superheroes.fight.client.HeroService;
 import io.quarkus.workshop.superheroes.fight.client.Villain;
 import io.quarkus.workshop.superheroes.fight.client.VillainService;
 import org.eclipse.microprofile.faulttolerance.Fallback;
+
+import org.eclipse.microprofile.reactive.messaging.Channel;
+import org.eclipse.microprofile.reactive.messaging.Emitter;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.logging.Logger;
 
@@ -33,6 +36,10 @@ public class FightService {
     @Inject
     @RestClient
     VillainService villainService;
+
+    @Inject
+    @Channel("fights")
+    Emitter<Fight> emitter;
 
     Fighters findRandomFighters() {
         Hero hero = findRandomHero();
@@ -97,6 +104,7 @@ public class FightService {
 
         fight.fightDate = Instant.now();
         fight.persist(fight);
+        emitter.send(fight);
         return fight;
     }
 
